@@ -2,8 +2,11 @@
 #define VIEW_GAMESCREEN_H
 
 #include <string>
+#include <vector>
+#include <model/Player.h>
 
 using std::string;
+using std::vector;
 
 class GameScreen
 {
@@ -27,9 +30,10 @@ public:
     GameScreen& operator=(GameScreen&&) = delete;
 
     void showStartScreen();
-    
-    void print(string s);
-    string enterPlayer();
+    string enterPlayerInfo(int id);
+    void printPlayerData(Player *player);
+    void printSection();
+    void displayBoard(vector<char> cellValues);
 };
 
 

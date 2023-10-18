@@ -12,14 +12,36 @@ void GameScreen::showStartScreen()
     cout << "=========================" << endl;
 }
 
-void GameScreen::print(string s) 
+string GameScreen::enterPlayerInfo(int id)
 {
-    cout << s;
+    string name{};
+
+    cout << "Enter player " << id << " name: ";
+    getline(cin, name);
+
+    return name;
 }
 
-string GameScreen::enterPlayer()
+void GameScreen::printPlayerData(Player *player)
 {
-    string s;
-    cin >> s;
-    return s;
+    cout << "Player " << player->getId() <<" data:\n";
+    cout << "  name: " << player->getName() << endl;
+}
+
+void GameScreen::printSection() 
+{
+    cout << "=========================" << endl;
+}
+
+void GameScreen::displayBoard(vector<char> cellValues)
+{
+    cout<<"\t     |     |     \n";
+    cout<<"\t  "<<cellValues.at(0)<<"  |  "<<cellValues.at(1)<<"  |  "<<cellValues.at(2)<<" \n";
+    cout<<"\t_____|_____|_____\n";
+    cout<<"\t     |     |     \n";
+    cout<<"\t  "<<cellValues.at(3)<<"  |  "<<cellValues.at(4)<<"  |  "<<cellValues.at(5)<<" \n";
+    cout<<"\t_____|_____|_____\n";
+    cout<<"\t     |     |     \n";
+    cout<<"\t  "<<cellValues.at(6)<<"  |  "<<cellValues.at(7)<<"  |  "<<cellValues.at(8)<<" \n";
+    cout<<"\t     |     |     \n";
 }

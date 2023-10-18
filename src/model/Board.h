@@ -2,15 +2,19 @@
 #define MODEL_BOARD_H
 
 #include <string>
+#include <vector>
 
 using std::string;
+using std::vector;
+
+#define MAXCELLNUM 9
 
 class Board
 {
 public:
     /// Constructor
-    Board() = default;
-    
+    Board();
+
     /// Destructor
     ~Board() = default;
 
@@ -26,12 +30,10 @@ public:
     /// Move operator
     Board& operator=(Board&&) = delete;
 
-
-    void storePlayer(string s);
-    string getPlayer();
+    vector<char> getCellValues();
 
 private:
-    string player_;
+    vector<char> cellValues_; 
 };
 
 #endif /* MODEL_BOARD_H */

@@ -1,11 +1,12 @@
 #include "Board.h"
 
-void Board::storePlayer(string s)
+Board::Board()
 {
-    player_ = s;
+    for (int i = 0; i < MAXCELLNUM; ++i)
+        cellValues_.push_back(49+i);
 }
 
-string Board::getPlayer() 
+vector<char> Board::getCellValues()
 {
-    return player_;
+    return cellValues_;
 }

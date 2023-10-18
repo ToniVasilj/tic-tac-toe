@@ -9,8 +9,10 @@ class Player
 {
 public:
     /// Constructor
-    explicit Player(string name) 
-    : name_ {name} {};
+    explicit Player(string name, int id) 
+    : name_ {name},
+      id_ {id}
+    {};
     
     /// Destructor
     virtual ~Player() = default;
@@ -28,9 +30,11 @@ public:
     Player& operator=(Player&&) = delete;
 
     string getName();
+    int getId();
 
 private:
     string name_;
+    int    id_;
 };
 
 #endif /* MODEL_PLAYER_H */

@@ -10,8 +10,7 @@ class HumanPlayer : public Player
 {
 public:
     /// Constructor
-    explicit HumanPlayer(string name) 
-    : Player {name} {};
+    explicit HumanPlayer(string name, int id);
     
     /// Destructor
     virtual ~HumanPlayer() = default;
